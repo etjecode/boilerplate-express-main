@@ -4,9 +4,15 @@ require('dotenv').config()
 
 console.log("Hello World")
 
+app.get('/json', (req, _res, next) =>{
+  console.log(req.method + ' ' + req.path + ' - ' + req.ip);
+  next();
+})
+
+/* 
 app.get('/', (_req, res) => {
   res.send('Hello Express')
-})
+}) */
 
 app.get('/', (_req, res) => {
   res.sendFile( __dirname + '/views/index.html' );
