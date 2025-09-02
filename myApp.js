@@ -9,6 +9,13 @@ app.get('/json', (req, _res, next) =>{
   next();
 })
 
+app.get('/now', (req, _res, next) =>{
+  req.time = new Date().toString();
+  next();
+}, (req, res) =>{
+  res.json({'time': req.time});
+})
+
 /* 
 app.get('/', (_req, res) => {
   res.send('Hello Express')
