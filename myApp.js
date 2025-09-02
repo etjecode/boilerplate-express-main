@@ -16,6 +16,11 @@ app.get('/now', (req, _res, next) =>{
   res.json({'time': req.time});
 })
 
+app.get('/:word/echo', (req, res, next) =>{
+  res.json({'echo': req.params.word});
+ next();
+})
+
 /* 
 app.get('/', (_req, res) => {
   res.send('Hello Express')
