@@ -21,6 +21,14 @@ app.get('/:word/echo', (req, res, next) =>{
  next();
 })
 
+
+app.get('/name', (req, res, next) =>{
+  let firstName = req.query.first;
+  let lastName = req.query.last;
+  res.json({'name': firstName + ' ' + lastName});
+ next();
+})
+
 /* 
 app.get('/', (_req, res) => {
   res.send('Hello Express')
